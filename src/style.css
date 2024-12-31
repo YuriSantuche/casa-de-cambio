@@ -1,0 +1,167 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #0b0f0c;  /* Darker background */
+    color: #d0d0d0;  /* Light text color for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Container */
+main {
+    background-color: #1a1f1b;  /* Slightly lighter dark background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Heading */
+main h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #4b9c51;  /* Darker green for the main title */
+}
+
+/* Input and Button */
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.principal input[type="text"] {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #397d44;  /* Dark green border */
+    border-radius: 4px;
+    background-color: #2c322e;  /* Darker input background */
+    color: #d0d0d0;  /* Light text color for contrast */
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.principal input[type="text"]:focus {
+    border-color: #67b87b;  /* Lighter green on focus */
+    background-color: #37403a;  /* Darker background on focus */
+}
+
+.principal label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #a5a5a5;  /* Light gray for the label */
+}
+
+.principal button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #397d44;  /* Dark green button */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 150px;
+}
+
+.principal button:hover {
+    background-color: #2f6537;  /* Darker green on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Rates Display */
+section {
+    display: none;  /* Hide section initially */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+section.show {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    opacity: 1;
+}
+
+#result {
+    display: contents;  /* Allow grid items to inherit grid properties */
+}
+
+#result p {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #2c322e;  /* Darker background for each rate */
+    border-radius: 4px;
+    width: 100%;
+    text-align: left;
+    color: #67b87b;  /* Dark green text color for the rates */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar Styles */
+section::-webkit-scrollbar {
+    width: 8px;
+}
+
+section::-webkit-scrollbar-track {
+    background: #1a1f1b;  /* Match the background of the container */
+}
+
+section::-webkit-scrollbar-thumb {
+    background-color: #397d44;  /* Dark green scrollbar */
+    border-radius: 10px;
+    border: 2px solid #1a1f1b;  /* Add a border around the thumb */
+}
+
+p {
+    margin: 10px;
+    padding: 10px;
+    background-color: #2e2e2e;
+    border-radius: 5px;
+    border: 1px solid #228b22;  /* Green border around each currency */
+    text-align: center;  /* Center text */
+    color: #cfcfcf;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    .principal input[type="text"],
+    .principal button {
+        width: 100%;
+    }
+
+    #result p {
+        width: 100%;
+    }
+}
